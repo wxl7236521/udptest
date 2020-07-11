@@ -1,6 +1,6 @@
 {
   "name": "udptest",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "udp test",
   "main": "./lib/index.js",
   "repository": {

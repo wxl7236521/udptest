@@ -472,7 +472,7 @@ class udpTest{
 			let loopStr2='';//1K
 			for(let i=0;i<this.numPacket;i++){loopStr2+=loopStr;}
 			const dataLen = Buffer.byteLength(loopStr2,paserWriter.getEncoding());
-			console.log('单次发送大小：'+dataLen);
+			console.log('单次发送大小：'+dataLen+'，发送次数：'+this.sendCount+'，每次同时发送：'+this.perCount+'，间隔时间：'+this.interval);
 			let sendPackage:any=[];
 			let intervalcount=0;
 			for(let i = 0;i < this.sendCount;i++){
@@ -480,7 +480,6 @@ class udpTest{
 					setTimeout(function(){
 						let data = paserWriter.UInt32(id).byte(PACK_TYPE_STR).UInt32(dataLen).UInt32(i + 1).UInt32(udpTest.sendCount).fstring(loopStr2).pack();
 						sendPackage.push(data);
-						console.log(i)
 						if((i + 1)%udpTest.perCount==0||i==udpTest.sendCount-1){
 							for(let m of sendPackage){
 								udpTest.send(m,udpTest.portServer,udpTest.ipServer);
@@ -500,7 +499,7 @@ class udpTest{
 		const that=this;
 		that.client=udp.createSocket({type:that.ipv4oripv6,reuseAddr:true});
 		if(that.isClinet){
-			that.client.bind(that.portClinet);
+			//that.client.bind(that.portClinet);
 		}else{
 			that.client.bind(that.portServer);
 		}
@@ -575,8 +574,8 @@ class udpTest{
 						//console.info('Long data pack come in: ' + dataStr);
 						total+=data.length;
 						if(head.num==head.count){
-							console.log(that.currentReceive.get(head.id))
-							console.log(that.currentReceive.get(head.id).length)
+							console.log('接收消息：'+that.currentReceive.get(head.id))
+							console.log('接收消息数量：'+that.currentReceive.get(head.id).length)
 							let lostfiles=that.lostReceive.get(head.id);
 							if(lostfiles==undefined){
 								lostfiles=[];
@@ -594,8 +593,8 @@ class udpTest{
 									that.lostReceive.set(head.id,lostfiles);
 								}
 							}
-							console.log(that.lostReceive.get(head.id))
-							console.log(that.lostReceive.get(head.id).length)
+							console.log('丢失消息：'+that.lostReceive.get(head.id))
+							console.log('丢失消息数量：'+that.lostReceive.get(head.id).length)
 						}
 						if(total==head.length){console.info('Long data finished!')};
 					});
