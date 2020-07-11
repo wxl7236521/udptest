@@ -1,8 +1,12 @@
 {
   "name": "udptest",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "udp test",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wxl7236521/udptest.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
