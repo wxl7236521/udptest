@@ -1,0 +1,21 @@
+{
+  "name": "udptest",
+  "version": "1.0.1",
+  "description": "udp test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "udp"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "udptest": "./bin/udpTest.js"
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "dgram": "^1.0.1"
+  }
+}
