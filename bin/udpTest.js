@@ -570,8 +570,8 @@ class udpTest{
 						//console.info('Long data pack come in: ' + dataStr);
 						total+=data.length;
 						if(head.num==head.count){
-							console.log('接收消息：'+that.currentReceive.get(head.id))
-							console.log('接收消息数量：'+that.currentReceive.get(head.id).length)
+							console.log(head.id+':接收消息：'+that.currentReceive.get(head.id))
+							console.log(head.id+':接收消息数量：'+that.currentReceive.get(head.id).length)
 							var lostfiles=that.lostReceive.get(head.id);
 							if(lostfiles==undefined){
 								lostfiles=[];
@@ -589,8 +589,8 @@ class udpTest{
 									that.lostReceive.set(head.id,lostfiles);
 								}
 							}
-							console.log('丢失消息：'+that.lostReceive.get(head.id))
-							console.log('丢失消息数量：'+that.lostReceive.get(head.id).length)
+							console.log(head.id+':丢失消息：'+that.lostReceive.get(head.id))
+							console.log(head.id+':丢失消息数量：'+that.lostReceive.get(head.id).length)
 						}
 						if(total==head.length){console.info('Long data finished!')};
 					});
