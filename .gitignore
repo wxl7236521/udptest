@@ -1,2 +1,8 @@
 node_modules
 package-lock.json
+index.ts
+bin/udpTest.ts
+lib/index.d.ts
+lib/index.js
+lib/bin/udpTest.d.ts
+lib/bin/udpTest.js

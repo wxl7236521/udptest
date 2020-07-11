@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "udptest": "./bin/udpTest.js"
+    "udptest2": "./bin/test.js"
   },
   "dependencies": {
     "commander": "^5.1.0",
