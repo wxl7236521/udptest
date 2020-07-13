@@ -1,2 +1,2 @@
-import udptest from './bin/udpTest';
-export default udptest;
+import { udpTest } from './bin/udpTest';
+export = udpTest;

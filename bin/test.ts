@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 import {program} from 'commander';
-import udpTest from './udpTest';
+import {udpTest} from './udpTest';
 
 program
   .option('-s, --server', 'start Server')

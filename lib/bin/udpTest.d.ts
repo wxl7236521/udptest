@@ -18,4 +18,4 @@ declare class udpTest {
     send(o: any, port: any, ip: any): void;
     registerProtocolBody(): void;
 }
-export default udpTest;
+export { udpTest };
